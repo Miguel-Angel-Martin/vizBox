@@ -1,0 +1,12 @@
+<h1 class="avl-container-start">{{ 'VizBoxStarterKit.LoggingDemo' | translate }}</h1>
+
+<avl-button (click)="debug()">Debug</avl-button>
+<avl-button (click)="info()">Info</avl-button>
+<avl-button (click)="warn()">Warning</avl-button>
+<avl-button (click)="error()">Error</avl-button>
+
+<div style="margin-top: 10px;">
+  <div *ngFor="let log of logs$ | async" style="margin-top: 5px;">
+    {{log | json}}
+  </div>
+</div>

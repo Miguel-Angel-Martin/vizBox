@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@avl-styles/controls/dist/avl-controls.css';
+@import '~@avl-styles/common/dist/avl-styles.css';
+@import '~@avl-styles/icons/dist/material-design-icons.css';
+@import '~@avl-styles/icons/dist/font-awesome.css';
+
+body {
+  margin: 0px;
+  min-height: 90vh;
+}
+
+body, 
+body[theme="light"] {
+  --avl-product-color: rgba(60, 160, 185, 1);
+  --avl-product-focus-color: rgba(60, 160, 185, 0.4);
+  --avl-product-hover-color: rgba(60, 160, 185, 0.2);
+}
+
+body[theme="dark"] {
+  --avl-product-color: rgba(60, 160, 185, 1);
+  --avl-product-focus-color: rgba(60, 160, 185, 0.4);
+  --avl-product-hover-color: rgba(60, 160, 185, 0.2);
+}
+
+.fa {
+  font-size: 20px;
+}

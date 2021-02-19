@@ -1,0 +1,125 @@
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2019-10-01 11:57+0000\n"
+"Last-Translator: vedran <vedran.primorac@avl.com>\n"
+"Language-Team: Croatian <http://'*'/projects/vizbox-starter-kit/"
+"vizbox-starter-kit/hr/>\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.8\n"
+
+msgid "VizBoxStarterKit.Introduction"
+msgstr "Uvod"
+
+msgid "VizBoxStarterKit.AvlWebStarterKit"
+msgstr "Avl Web Starter Kit"
+
+msgid "VizBoxStarterKit.About"
+msgstr "O nama"
+
+msgid "VizBoxStarterKit.LoggingDemo"
+msgstr "Demo Logiranja"
+
+msgid "VizBoxStarterKit.Unknown"
+msgstr "Nepoznato"
+
+msgid "VizBoxStarterKit.Messages"
+msgstr "Poruke"
+
+msgid "VizBoxStarterKit.Settings"
+msgstr "Postavke"
+
+msgid "VizBoxStarterKit.Help"
+msgstr "Pomoć"
+
+msgid "VizBoxStarterKit.Login"
+msgstr "Prijavi se"
+
+msgid "VizBoxStarterKit.Logout"
+msgstr "Odjavi se"
+
+msgid "VizBoxStarterKit.Monitor"
+msgstr "Nadgledanje"
+
+msgid "VizBoxStarterKit.Remove"
+msgstr "Ukloni"
+
+msgid "VizBoxStarterKit.Available"
+msgstr "Dostupno"
+
+msgid "VizBoxStarterKit.Pending"
+msgstr "U tijeku"
+
+msgid "VizBoxStarterKit.Sold"
+msgstr "Prodano"
+
+msgid "VizBoxStarterKit.ID"
+msgstr "ID"
+
+msgid "VizBoxStarterKit.Name"
+msgstr "Ime"
+
+msgid "VizBoxStarterKit.Status"
+msgstr "Status"
+
+msgid "VizBoxStarterKit.Category"
+msgstr "Kategorija"
+
+msgid "VizBoxStarterKit.ConnectionFailedToPetstoreServer"
+msgstr "Nije uspjelo povezivanje prema serveru"
+
+msgid "VizBoxStarterKit.TheFatClients"
+msgstr "The Fat Clients"
+
+msgid "VizBoxStarterKit.VizBoxPlatformAndAVLWebStarterKitDevelopedBy"
+msgstr "VizBox platforma i AVL Web Starter Kit razvija tim `The Fat Clients`."
+
+msgid "VizBoxStarterKit.WelcomeStarterKit"
+msgstr "Dobro došli u StarterKit"
+
+msgid "VizBoxStarterKit.SelectOneItemFromTheSideNavigation"
+msgstr ""
+"Odaberite jednu stavku bočne navigacije (koja se može proširiti klikom na "
+"ikonu dvostruke strelice) lijevo."
+
+msgid "VizBoxStarterKit.WelcomeToTheAVLWebStarterKit"
+msgstr "Dobro došli u AVL Web Starter Kit"
+
+msgid "VizBoxStarterKit.AVLWebStarterKitIsApplicationExample"
+msgstr ""
+"AVL Web Starter Kit je primjer aplikacije izgrađen pomoću VizBox platforme."
+
+msgid "VizBoxStarterKit.VizBoxPlatformIsDesignedToBringYouUpToSpeed"
+msgstr ""
+"VizBox platforma osmišljena kako bi ubrzala rad s nizom uobičajenih kontrola "
+"i usluga i kao pomoć pri svim vašim web nastojanjima. VizBox se sastoji od "
+"okvira agnostičkih kontrola i ng kontrola i usluga. Neke od kontrola možete "
+"vidjeti u nastavku."
+
+msgid "VizBoxStarterKit.Tags"
+msgstr "Oznake"
+
+msgid "VizBoxStarterKit.Photos"
+msgstr "Fotografije"
+
+msgid "VizBoxStarterKit.Loading..."
+msgstr "Učitavanje..."
+
+msgid "VizBoxStarterKit.EditPet"
+msgstr "Uredi ljubimca"
+
+msgid "VizBoxStarterKit.NewPet"
+msgstr "Novi ljubimac"
+
+msgid "VizBoxStarterKit.Cancel"
+msgstr "Odustani"
+
+msgid "VizBoxStarterKit.Save"
+msgstr "Spremi"
+
+msgid "VizBoxStarterKit.PetsInStore"
+msgstr "Ljubimci u dućanu"

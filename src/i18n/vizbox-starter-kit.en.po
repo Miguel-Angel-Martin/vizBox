@@ -1,0 +1,126 @@
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2019-10-02 12:08+0000\n"
+"Last-Translator: vedran <vedran.primorac@avl.com>\n"
+"Language-Team: English <http://'*'/projects/vizbox-starter-kit/"
+"vizbox-starter-kit/en/>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.8\n"
+
+msgid "VizBoxStarterKit.Introduction"
+msgstr "Introduction"
+
+msgid "VizBoxStarterKit.AvlWebStarterKit"
+msgstr "Avl Web Starter Kit"
+
+msgid "VizBoxStarterKit.About"
+msgstr "About"
+
+msgid "VizBoxStarterKit.LoggingDemo"
+msgstr "Logging Demo"
+
+msgid "VizBoxStarterKit.Unknown"
+msgstr "Unknown"
+
+msgid "VizBoxStarterKit.Messages"
+msgstr "Messages"
+
+msgid "VizBoxStarterKit.Settings"
+msgstr "Settings"
+
+msgid "VizBoxStarterKit.Help"
+msgstr "Help"
+
+msgid "VizBoxStarterKit.Login"
+msgstr "Login"
+
+msgid "VizBoxStarterKit.Logout"
+msgstr "Logout"
+
+msgid "VizBoxStarterKit.Monitor"
+msgstr "Monitor"
+
+msgid "VizBoxStarterKit.Remove"
+msgstr "Remove"
+
+msgid "VizBoxStarterKit.Available"
+msgstr "Available"
+
+msgid "VizBoxStarterKit.Pending"
+msgstr "Pending"
+
+msgid "VizBoxStarterKit.Sold"
+msgstr "Sold"
+
+msgid "VizBoxStarterKit.ID"
+msgstr "ID"
+
+msgid "VizBoxStarterKit.Name"
+msgstr "Name"
+
+msgid "VizBoxStarterKit.Status"
+msgstr "Status"
+
+msgid "VizBoxStarterKit.Category"
+msgstr "Category"
+
+msgid "VizBoxStarterKit.ConnectionFailedToPetstoreServer"
+msgstr "Connection failed to petstore server"
+
+msgid "VizBoxStarterKit.TheFatClients"
+msgstr "The Fat Clients"
+
+msgid "VizBoxStarterKit.VizBoxPlatformAndAVLWebStarterKitDevelopedBy"
+msgstr ""
+"VizBox platform and AVL Web Starter Kit is developed by `The Fat Clients` "
+"Alaska Team."
+
+msgid "VizBoxStarterKit.WelcomeStarterKit"
+msgstr "Welcome to StarterKit"
+
+msgid "VizBoxStarterKit.SelectOneItemFromTheSideNavigation"
+msgstr ""
+"Select one item from the side navigation (which can expanded by clicking on "
+"the double arrow icon) on the left."
+
+msgid "VizBoxStarterKit.WelcomeToTheAVLWebStarterKit"
+msgstr "Welcome to the AVL Web Starter Kit"
+
+msgid "VizBoxStarterKit.AVLWebStarterKitIsApplicationExample"
+msgstr ""
+"AVL Web Starter Kit is application example built using VizBox platform."
+
+msgid "VizBoxStarterKit.VizBoxPlatformIsDesignedToBringYouUpToSpeed"
+msgstr ""
+"VizBox platform is designed to bring you up to speed with set of commonly "
+"used controls and services and to help with all your web endeavours. VizBox "
+"consists of framework agnostic controls and ng controls and services. You "
+"can see some of the controls below."
+
+msgid "VizBoxStarterKit.Tags"
+msgstr "Tags"
+
+msgid "VizBoxStarterKit.Photos"
+msgstr "Photos"
+
+msgid "VizBoxStarterKit.Loading..."
+msgstr "Loading..."
+
+msgid "VizBoxStarterKit.EditPet"
+msgstr "Edit pet"
+
+msgid "VizBoxStarterKit.NewPet"
+msgstr "New pet"
+
+msgid "VizBoxStarterKit.Cancel"
+msgstr "Cancel"
+
+msgid "VizBoxStarterKit.Save"
+msgstr "Save"
+
+msgid "VizBoxStarterKit.PetsInStore"
+msgstr "Pets in store"

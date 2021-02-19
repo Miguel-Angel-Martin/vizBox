@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <title>AVL Web App Starter Kit</title>
+  <base href="/">
+
+  <script>
+    window.polymerSkipLoadingFontRoboto = true;
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .loadingProgressContainer {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    .loadingProgressContainer .loader {
+      border: 8px solid;
+      width: 80px;
+      height: 80px;
+      box-sizing: border-box;
+      border-radius: 50%;
+      border-color: #41AADC #41AADC transparent;
+      animation: spin 0.7s linear infinite;
+      margin-bottom: 16px;
+    }
+
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <script src="ie11-warning.umd.js"></script>
+  <!-- Load environment variables -->
+  <script src="assets/env.js"></script>
+</head>
+
+<body class="avl-body" typography="avl">
+  <viz-root>
+    <div class="loadingProgressContainer">
+      <div class="loader"></div>
+      <div>Loading, please wait...</div>
+    </div>
+  </viz-root>
+</body>
+
+</html>

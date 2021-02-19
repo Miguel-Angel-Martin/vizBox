@@ -1,0 +1,113 @@
+msgid ""
+msgstr ""
+"mime-version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "VizBoxStarterKit.Introduction"
+msgstr ""
+
+msgid "VizBoxStarterKit.AvlWebStarterKit"
+msgstr ""
+
+msgid "VizBoxStarterKit.About"
+msgstr ""
+
+msgid "VizBoxStarterKit.LoggingDemo"
+msgstr ""
+
+msgid "VizBoxStarterKit.Unknown"
+msgstr ""
+
+msgid "VizBoxStarterKit.Messages"
+msgstr ""
+
+msgid "VizBoxStarterKit.Settings"
+msgstr ""
+
+msgid "VizBoxStarterKit.ThemingLocalization"
+msgstr ""
+
+msgid "VizBoxStarterKit.Help"
+msgstr ""
+
+msgid "VizBoxStarterKit.Login"
+msgstr ""
+
+msgid "VizBoxStarterKit.Logout"
+msgstr ""
+
+msgid "VizBoxStarterKit.Monitor"
+msgstr ""
+
+msgid "VizBoxStarterKit.Remove"
+msgstr ""
+
+msgid "VizBoxStarterKit.Available"
+msgstr ""
+
+msgid "VizBoxStarterKit.Pending"
+msgstr ""
+
+msgid "VizBoxStarterKit.Sold"
+msgstr ""
+
+msgid "VizBoxStarterKit.ID"
+msgstr ""
+
+msgid "VizBoxStarterKit.Name"
+msgstr ""
+
+msgid "VizBoxStarterKit.Status"
+msgstr ""
+
+msgid "VizBoxStarterKit.Category"
+msgstr ""
+
+msgid "VizBoxStarterKit.ConnectionFailedToPetstoreServer"
+msgstr ""
+
+msgid "VizBoxStarterKit.TheFatClients"
+msgstr ""
+
+msgid "VizBoxStarterKit.VizBoxPlatformAndAVLWebStarterKitDevelopedBy"
+msgstr ""
+
+msgid "VizBoxStarterKit.WelcomeStarterKit"
+msgstr ""
+
+msgid "VizBoxStarterKit.SelectOneItemFromTheSideNavigation"
+msgstr ""
+
+msgid "VizBoxStarterKit.WelcomeToTheAVLWebStarterKit"
+msgstr ""
+
+msgid "VizBoxStarterKit.AVLWebStarterKitIsApplicationExample"
+msgstr ""
+
+msgid "VizBoxStarterKit.VizBoxPlatformIsDesignedToBringYouUpToSpeed"
+msgstr ""
+
+msgid "VizBoxStarterKit.Tags"
+msgstr ""
+
+msgid "VizBoxStarterKit.Photos"
+msgstr ""
+
+msgid "VizBoxStarterKit.Loading..."
+msgstr ""
+
+msgid "VizBoxStarterKit.EditPet"
+msgstr ""
+
+msgid "VizBoxStarterKit.NewPet"
+msgstr ""
+
+msgid "VizBoxStarterKit.Cancel"
+msgstr ""
+
+msgid "VizBoxStarterKit.Save"
+msgstr ""
+
+msgid "VizBoxStarterKit.PetsInStore"
+msgstr ""
