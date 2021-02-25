@@ -14,20 +14,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 
-import { ApiModule } from '../pet-store/api.module';
-import { BASE_PATH } from '../pet-store/variables';
+/* import { ApiModule } from '../pet-store/api.module';
+import { BASE_PATH } from '../pet-store/variables'; */
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { LoggingConfig } from 'logging.config';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
-    return new MultiTranslateHttpLoader(http, [
-      {prefix: 'assets/i18n/avl-controls-core.', suffix: '.json'},
-      {prefix: 'assets/i18n/avl-controls-datatable.', suffix: '.json'},
-      {prefix: 'assets/i18n/vizbox-starter-kit.', suffix: '.json'},
-      // latest file translations with same keys will overwrite same translations in files defined before it
-    ]);
+  return new MultiTranslateHttpLoader(http, [
+    { prefix: 'assets/i18n/avl-controls-core.', suffix: '.json' },
+    { prefix: 'assets/i18n/avl-controls-datatable.', suffix: '.json' },
+    { prefix: 'assets/i18n/vizbox-starter-kit.', suffix: '.json' },
+    // latest file translations with same keys will overwrite same translations in files defined before it
+  ]);
 }
 
 @NgModule({
@@ -42,7 +42,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     LoggingModule.forRoot(LoggingConfig),
 
-    ApiModule,
+    //ApiModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -56,7 +56,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   providers: [
     ThemeService,
-    { provide: BASE_PATH, useValue: basePath },
+    /*  { provide: BASE_PATH, useValue: basePath }, */
     { provide: INTERCEPTOR_BASE_PATHS, useValue: [basePath] },
     { provide: HTTP_INTERCEPTORS, useClass: AvlTokenInterceptor, multi: true },
     NgxTranslateTranslationService,
@@ -71,5 +71,5 @@ export function HttpLoaderFactory(http: HttpClient) {
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {
-  constructor() {}
+  constructor() { }
 }
