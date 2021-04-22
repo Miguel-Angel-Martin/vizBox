@@ -111,3 +111,6 @@ msgstr ""
 
 msgid "VizBoxStarterKit.PetsInStore"
 msgstr ""
+
+msgid "VizBoxStarterKit.Employee"
+msgstr ""

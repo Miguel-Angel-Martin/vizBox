@@ -21,6 +21,7 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
 import { LoggingConfig } from 'logging.config';
 
 
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new MultiTranslateHttpLoader(http, [
     { prefix: 'assets/i18n/avl-controls-core.', suffix: '.json' },

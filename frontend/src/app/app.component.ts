@@ -59,7 +59,7 @@ export class AppComponent implements OnDestroy, OnInit {
     logout: () => this.authService.logout(),
     settings: () => (this.isSettingsDialogOpen = true),
     about: () => (this.isAboutDialogOpen = true),
-    undefined: () => {},
+    undefined: () => { },
   };
 
   public isChild: boolean = this.shellCommunicationService.isChild;
@@ -77,6 +77,11 @@ export class AppComponent implements OnDestroy, OnInit {
       this.translateService.instant('VizBoxStarterKit.LoggingDemo'),
       '/logging-demo',
       'icons:list'
+    ),
+    new TopLevelPage(
+      this.translateService.instant('VizBoxStarterKit.Employee'),
+      '/employee/list',
+      'icons:link'
     ),
   ];
 

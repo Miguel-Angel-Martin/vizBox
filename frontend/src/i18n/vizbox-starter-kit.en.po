@@ -124,3 +124,6 @@ msgstr "Save"
 
 msgid "VizBoxStarterKit.PetsInStore"
 msgstr "Pets in store"
+
+msgid "VizBoxStarterKit.Employee"
+msgstr "Employee"

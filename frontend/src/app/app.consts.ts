@@ -74,14 +74,18 @@ export const COUNTRIES = [
     label: 'United States',
     value: 'us',
   },
+  {
+    label: 'Spain',
+    value: 'es',
+  },
 ];
 
 export const AVL_DIALOG_INFO = {
   logoSrc: 'assets/images/vizbox-logo.svg',
-  productName: 'Starter kit vizbox application™',
-  brandPromise: 'Make vizbox great again',
+  productName: 'AVL THEIA application™',
+  brandPromise: 'SCADA, EMOS and LEOS',
   versionInfo: [
-    { label: 'Version number', value: '1.0.0' },
+    { label: 'Version number', value: '3.1.57' },
     { label: 'Build number', value: '1345' },
     { label: 'Build date', value: '2021-01-11' },
   ],
