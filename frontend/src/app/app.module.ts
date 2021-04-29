@@ -18,15 +18,13 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
-
-import { ApiModule } from '../pet-store/api.module';
-import { BASE_PATH } from '../pet-store/variables';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { LoggingConfig } from 'logging.config';
 import { AvlNotificationModule } from '@avl-ng-controls/notification';
 import { FormsModule } from '@angular/forms';
 import { NotificationsComponent } from './components/notifications/notifications.component';
+import { GraphQLModule } from './graphql.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new MultiTranslateHttpLoader(http, [
@@ -46,7 +44,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule,
     HttpClientModule,
     LoggingModule.forRoot(LoggingConfig),
-    ApiModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -58,11 +55,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     CoreModule,
     AppRoutingModule,
     AvlNotificationModule,
+    GraphQLModule,
   ],
   providers: [
     ThemeService,
     NotificationService,
-    { provide: BASE_PATH, useValue: basePath },
     {
       provide: INTERCEPTOR_BASE_PATHS,
       useValue: [basePath], // For multiple APIs, add them in this array
@@ -84,5 +81,5 @@ export function HttpLoaderFactory(http: HttpClient) {
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {
-  constructor() {}
+  constructor() { }
 }

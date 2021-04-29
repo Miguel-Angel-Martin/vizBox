@@ -8,6 +8,7 @@ import { AvlNavigationModule } from '@avl-ng-controls/navigation';
 import { TranslateModule } from '@ngx-translate/core';
 import { AvlNotificationModule } from '@avl-ng-controls/notification';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -25,6 +26,7 @@ import { AvlNotificationModule } from '@avl-ng-controls/notification';
     AvlDialogModule,
     AvlNgBindersModule,
     TranslateModule,
-  ]
+  ],
+  declarations: []
 })
-export class SharedModule {}
+export class SharedModule { }

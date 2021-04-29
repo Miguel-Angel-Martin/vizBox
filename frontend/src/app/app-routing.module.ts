@@ -5,14 +5,15 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
 
 
 const appRoutes: Routes = [
+  { path: '', redirectTo: 'character-list', pathMatch: 'full' },
   {
-    path: '',
+    path: 'home',
     loadChildren: () => import('app/components/home/home.module').then(m => m.HomeModule)
   },
-  {
+  /* {
     path: 'intro',
     loadChildren: () => import('app/components/intro/intro.module').then(m => m.IntroModule),
-  },
+  }, */
   {
     path: 'about',
     loadChildren: () => import('app/components/about/about.module').then(m => m.AboutModule)
@@ -22,6 +23,13 @@ const appRoutes: Routes = [
     loadChildren: () => import('app/components/logging-demo/logging-demo.module').then(m => m.LoggingDemoModule)
   },
   { path: 'error-page', component: ErrorPageComponent },
+
+  { path: 'episodes', loadChildren: () => import('./components/episodes/episodes.module').then(m => m.EpisodesModule) },
+
+  { path: 'character-list', loadChildren: () => import('./components/characters/characters-list/characters-list.module').then(m => m.CharactersListModule) },
+
+  { path: 'character-details', loadChildren: () => import('./components/characters/characters-details/characters-details.module').then(m => m.CharactersDetailsModule) },
+
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -29,4 +37,4 @@ const appRoutes: Routes = [
   imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

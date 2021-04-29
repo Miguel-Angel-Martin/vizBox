@@ -2,7 +2,12 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { takeUntil } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 
-import { ApplicationReference, TopLevelPage } from '@avl-ng-controls/navigation';
+import {
+  ApplicationReference, Group,
+  TopLevelPage,
+  Paragraph,
+  Page
+} from '@avl-ng-controls/navigation';
 import { AvlAuthService } from '@avl-ng-controls/auth';
 import {
   AvlOverflowMenuItem,
@@ -16,6 +21,7 @@ import '@avl-controls/core/dist/avl-overflow-menu/avl-overflow-menu';
 import '@avl-controls/core/dist/avl-radio-group/avl-radio-group';
 import '@avl-controls/core/dist/avl-radio-button/avl-radio-button';
 import '@avl-controls/core/dist/avl-dropdown/avl-dropdown';
+/* import '@avl-controls/core/dist/avl-datatable/avl-datatable'; */
 
 import { AVL_DIALOG_INFO, COUNTRIES, HOME_PAGE_URL, ICON, MENU, THEMES } from './app.consts';
 
@@ -59,7 +65,7 @@ export class AppComponent extends BaseComponent implements OnDestroy, OnInit {
     logout: () => this.authService.logout(),
     settings: () => (this.isSettingsDialogOpen = true),
     about: () => (this.isAboutDialogOpen = true),
-    undefined: () => {},
+    undefined: () => { },
   };
 
   public isChild: boolean = this.shellCommunicationService.isChild;
@@ -69,15 +75,20 @@ export class AppComponent extends BaseComponent implements OnDestroy, OnInit {
   public sideNavItems = [
     new TopLevelPage(
       this.translateService.instant('VizBoxStarterKit.AvlWebStarterKit'),
-      '/intro',
+      '/home',
       'home'
     ),
-    new TopLevelPage(this.translateService.instant('VizBoxStarterKit.About'), '/about', 'info'),
-    new TopLevelPage(
+    /*  new TopLevelPage(this.translateService.instant('VizBoxStarterKit.About'), '/about', 'info'), */
+    /* new TopLevelPage(
       this.translateService.instant('VizBoxStarterKit.LoggingDemo'),
       '/logging-demo',
       'icons:list'
-    ),
+    ), */
+    new Group('Rick&Morty', 'av:fast-forward', undefined, [
+      new Page('Character-list', '/character-list'),
+      new Page('Episodes', '/episodes')
+    ])
+
   ];
 
   // About Dialog Info

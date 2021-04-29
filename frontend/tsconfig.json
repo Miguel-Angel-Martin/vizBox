@@ -3,6 +3,12 @@
   "compilerOptions": {
     "downlevelIteration": true,
     "outDir": "./dist/out-tsc",
+    "paths": {
+      "@app": ["src/app/*"],
+      "@environment":["src/environments/*"],
+      "@shared": ["src/app/shared/*"],
+      "@characters": ["src/app/components/characters/*"],
+    },
     "baseUrl": "src",
     "sourceMap": true,
     "declaration": false,
@@ -15,9 +21,11 @@
     ],
     "lib": [
       "es2016",
-      "dom"
+      "dom",
+      "esnext.asynciterable"
     ],
-    "module": "esnext"
+    "module": "esnext",
+    "allowSyntheticDefaultImports": true
   },
   "angularCompilerOptions": {
     "preserveWhitespaces": false,
