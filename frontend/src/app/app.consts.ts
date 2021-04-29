@@ -18,13 +18,13 @@ export const UNKNOWN_USER_MENU_ITEM: AvlOverflowMenuItem = {
 export const LOGIN_MENU_ITEM: AvlOverflowMenuItem = {
   label: 'VizBoxStarterKit.Login',
   action: 'login',
-  icon: 'social:person',
+  icon: 'loginLogoutIcons:login',
 };
 
 export const LOGOUT_MENU_ITEM: AvlOverflowMenuItem = {
   label: 'VizBoxStarterKit.Logout',
   action: 'logout',
-  icon: 'exit-to-app',
+  icon: 'loginLogoutIcons:logout',
 };
 
 export const CONSTANT_MENU_ITEMS: AvlOverflowMenuItem[] = [
@@ -44,7 +44,7 @@ export const CONSTANT_MENU_ITEMS: AvlOverflowMenuItem[] = [
   },
   {
     label: 'VizBoxStarterKit.About',
-    icon: 'info',
+    icon: 'info-outline',
     action: 'about',
   },
 ];
@@ -74,18 +74,13 @@ export const COUNTRIES = [
     label: 'United States',
     value: 'us',
   },
-  {
-    label: 'Spain',
-    value: 'es',
-  },
 ];
 
 export const AVL_DIALOG_INFO = {
   logoSrc: 'assets/images/vizbox-logo.svg',
-  productName: 'AVL THEIA application™',
-  brandPromise: 'SCADA, EMOS and LEOS',
+  productName: 'Starter kit vizbox application™',
   versionInfo: [
-    { label: 'Version number', value: '3.1.57' },
+    { label: 'Version number', value: '1.0.0' },
     { label: 'Build number', value: '1345' },
     { label: 'Build date', value: '2021-01-11' },
   ],

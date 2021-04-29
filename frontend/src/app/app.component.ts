@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -23,13 +22,14 @@ import { AVL_DIALOG_INFO, COUNTRIES, HOME_PAGE_URL, ICON, MENU, THEMES } from '.
 import { SettingsService, SolutionSettings } from './core/services/settings.service';
 import { OverflowMenuService } from './core/services/overflow-menu.service';
 import { AppService } from './core/services/app.service';
+import { BaseComponent } from './shared/components/base/base.component';
 
 @Component({
   selector: 'viz-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnDestroy, OnInit {
+export class AppComponent extends BaseComponent implements OnDestroy, OnInit {
   icon = ICON;
 
   // App-bar
@@ -59,7 +59,7 @@ export class AppComponent implements OnDestroy, OnInit {
     logout: () => this.authService.logout(),
     settings: () => (this.isSettingsDialogOpen = true),
     about: () => (this.isAboutDialogOpen = true),
-    undefined: () => { },
+    undefined: () => {},
   };
 
   public isChild: boolean = this.shellCommunicationService.isChild;
@@ -80,8 +80,6 @@ export class AppComponent implements OnDestroy, OnInit {
     ),
   ];
 
-  private destroyed$: Subject<void> = new Subject();
-
   // About Dialog Info
   public isAboutDialogOpen = false;
   public AVLDialogInfo = AVL_DIALOG_INFO;
@@ -95,6 +93,7 @@ export class AppComponent implements OnDestroy, OnInit {
     readonly overflowMenuService: OverflowMenuService,
     readonly appService: AppService
   ) {
+    super();
     // Subscription to Shell
     this.appService.ifChildSubscribeToShell();
   }
@@ -104,13 +103,14 @@ export class AppComponent implements OnDestroy, OnInit {
     this.authService.user$
       .pipe(takeUntil(this.destroyed$))
       .subscribe(
-        (user) => (this.menuItems = this.overflowMenuService.translateDependingOnUser(user))
+        user => {
+          this.menuItems = this.overflowMenuService.translateDependingOnUser(user);
+          if (this.isChild) {
+            // notify shell that user data has changed
+            this.shellCommunicationService.updateUserToShell();
+          }
+        }
       );
-  }
-
-  public ngOnDestroy(): void {
-    this.destroyed$.next();
-    this.destroyed$.complete();
   }
 
   public overflowMenuClicked(item: AvlOverflowMenuItem): void {

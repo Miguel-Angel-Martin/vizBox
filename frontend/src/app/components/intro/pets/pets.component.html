@@ -1,0 +1,16 @@
+<div fxLayout="column" fxLayoutAlign="start stretch" fxFill>
+
+  <div class="action-bar">
+    <h3 class="action-title">{{ 'VizBoxStarterKit.PetsInStore' | translate }}</h3>
+    <div class="action-buttons">
+      <avl-icon-button id="add-button" (click)="addPet()" icon="add"></avl-icon-button>
+      <avl-icon-button id="edit-button" (click)="editPet(selectedPet)" [disabled]="!selectedPet" icon="create"></avl-icon-button>
+      <avl-icon-button id="delete-button" (click)="deletePet()" accent [disabled]="!selectedPet" icon="delete" class="action-secondary"></avl-icon-button>
+    </div>
+  </div>
+
+  <avl-datatable #petsTable single-select (selectedValueChange)="petSelectionChanged($event)" [columnDefinitions]="columnDefinitions"
+    [dataProvider]="petStoreProvider" pagination page-size="6" column-selector></avl-datatable>
+</div>
+
+<viz-pet-dialog [open]="addEditDialogOpen" [edit]="isEditing" [pet]="selectedPet" (save)="savePet($event)" (cancel)="addEditDialogOpen = false"></viz-pet-dialog>

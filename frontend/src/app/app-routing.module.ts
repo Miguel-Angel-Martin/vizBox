@@ -9,10 +9,10 @@ const appRoutes: Routes = [
     path: '',
     loadChildren: () => import('app/components/home/home.module').then(m => m.HomeModule)
   },
-  /* {
+  {
     path: 'intro',
     loadChildren: () => import('app/components/intro/intro.module').then(m => m.IntroModule),
-  }, */
+  },
   {
     path: 'about',
     loadChildren: () => import('app/components/about/about.module').then(m => m.AboutModule)
@@ -29,4 +29,4 @@ const appRoutes: Routes = [
   imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

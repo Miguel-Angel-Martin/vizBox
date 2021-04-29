@@ -1,0 +1,35 @@
+<div style="margin-top: 56px;">
+  <avl-card *ngIf="pet" fxLayout="column" fxLayoutAlign="start stretch" fxFill>
+    <h1 slot="title">{{ pet.name }}</h1>
+    <div slot="content">
+      <div fxLayout="row" class="property">
+        <div fxFlex="20" class="label">{{ 'VizBoxStarterKit.Status' | translate }}</div>
+        <div fxFlex class="value">{{ pet.status }}</div>
+      </div>
+
+      <div fxLayout="row" class="property">
+        <div fxFlex="20" class="label">{{ 'VizBoxStarterKit.Tags' | translate }}</div>
+        <div fxFlex class="value">
+          <ng-container *ngFor="let tag of pet.tags; let isLast = last">
+            {{ tag.name }}{{ isLast ? '' : ', ' }}
+          </ng-container>
+        </div>
+      </div>
+
+      <div fxLayout="row" class="property">
+        <div fxFlex="20" class="label">{{ 'VizBoxStarterKit.Photos' | translate }}</div>
+        <div fxFlex class="value">
+          <ng-container *ngFor="let photo of petPhotos">
+            <img *ngIf="photo.visible; else loading" [src]="photo.url"  style="width: 200px;"/>
+
+            <ng-template #loading>
+              <div class="photo-loading-indicator">
+                {{ 'VizBoxStarterKit.Loading...' | translate }}
+              </div>
+            </ng-template>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </avl-card>
+</div>

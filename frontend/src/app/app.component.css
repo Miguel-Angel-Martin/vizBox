@@ -21,3 +21,12 @@ avl-overflow-menu avl-icon-button {
 avl-dropdown{
   width: 100%;
 }
+
+avl-icon-button#closeIcon{
+  width:60px;
+  height:60px;
+}
+
+avl-icon-button#closeIcon {
+  --avl-icon-button-color: var(--avl-emphasis-medium-color);
+}

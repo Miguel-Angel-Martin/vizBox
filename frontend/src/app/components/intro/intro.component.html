@@ -1,0 +1,17 @@
+<h1 class="avl-container-start">{{ 'VizBoxStarterKit.WelcomeToTheAVLWebStarterKit' |  translate }}</h1>
+<p>{{ 'VizBoxStarterKit.AVLWebStarterKitIsApplicationExample' | translate }}</p>
+<p>{{ 'VizBoxStarterKit.VizBoxPlatformIsDesignedToBringYouUpToSpeed' | translate }}</p>
+
+<div
+ fxLayout="row"
+ fxLayoutAlign="start stretch"
+ [fxLayoutGap]="selectedPet ? '10px' : '0px'">
+
+ <viz-pets
+   [fxFlex]="selectedPet ? 70 : 100"
+   (selectedPetChanged)="selectedPet = $event"></viz-pets>
+  
+ <viz-pet-detail
+   [fxFlex]="selectedPet ? 30 : 0"
+   [pet]="selectedPet"></viz-pet-detail>
+</div>

@@ -20,3 +20,7 @@ po2json(
   path.resolve(__dirname, '../node_modules/@avl-controls/datatable/translation'),
   i18nDir
 );
+po2json(
+  path.resolve(__dirname, '../node_modules/@avl-ng-controls/notification/translation'),
+  i18nDir
+);

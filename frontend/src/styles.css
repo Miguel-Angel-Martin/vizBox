@@ -11,15 +11,15 @@ body {
 
 body, 
 body[theme="light"] {
-  --avl-product-color: rgba(60, 160, 185, 1);
-  --avl-product-focus-color: rgba(60, 160, 185, 0.4);
-  --avl-product-hover-color: rgba(60, 160, 185, 0.2);
+  --avl-product-color: rgb(229, 6, 149);
+  --avl-product-hover-color: rgba(229, 6, 149, 0.2);
+  --avl-product-focus-color: rgba(229, 6, 149, 0.4);
 }
 
 body[theme="dark"] {
-  --avl-product-color: rgba(60, 160, 185, 1);
-  --avl-product-focus-color: rgba(60, 160, 185, 0.4);
-  --avl-product-hover-color: rgba(60, 160, 185, 0.2);
+  --avl-product-color: rgb(229, 6, 149);
+  --avl-product-hover-color: rgba(229, 6, 149, 0.2);
+  --avl-product-focus-color: rgba(229, 6, 149, 0.4);
 }
 
 .fa {

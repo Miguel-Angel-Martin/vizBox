@@ -56,7 +56,11 @@ describe('Auth flow', () => {
     await keycloakLoginPage.submitLoginForm();
 
     await appPage.waitForAngular(true);
+    await browser.sleep(1000);
+    
     await page.clickAuthMenuItem();
+
+    await appPage.waitForAngular(false);
 
     const currentUrl = await browser.getCurrentUrl();
 

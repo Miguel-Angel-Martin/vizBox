@@ -39,7 +39,7 @@ export abstract class BasePage {
   }
 
   get overflowMenuTrigger(): ElementFinder {
-    return element(by.css('avl-overflow-menu'));
+    return element(by.id('appBarMenu'));
   }
 
   get overflowMenuAuthItem(): ElementFinder {

@@ -1,0 +1,36 @@
+<avl-icon-button
+  #bellIcon
+  id="bellIcon"
+  icon="social:notifications"
+  slot="trigger"
+  (click)="toggleNotificationsMenu()"
+  [badge]="notificationCount"
+  [badgeValue]="notificationCount"
+>
+</avl-icon-button>
+
+<avl-notification-menu
+  [(open)]="isNotificationMenuOpen"
+  [notifications]="notificationService.notifications"
+  [trigger]="bellIcon"
+  (openDetails)="openNotificationDialog()"
+  (markAllAsRead)="notificationService.markAllAsRead()"
+  (markAllAsUnread)="notificationService.markAllAsUnread()"
+  (notificationStateChanged)="onNotificationStateChanged($event)"
+>
+</avl-notification-menu>
+
+<avl-notification-container
+  *ngIf="!isNotificationMenuOpen && !isNotificationDialogOpen"
+  [notification$]="notificationService.notification$"
+  (openMenu)="toggleNotificationsMenu()"
+></avl-notification-container>
+
+<avl-notification-dialog
+  *ngIf="isNotificationDialogOpen"
+  [(open)]="isNotificationDialogOpen"
+  [notifications]="notificationService.notifications"
+  (markSelectedAsRead)="markSelectedAsRead($event)"
+  (markSelectedAsUnread)="markSelectedAsUnread($event)"
+>
+</avl-notification-dialog>

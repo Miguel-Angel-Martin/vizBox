@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { Location } from '@angular/common';
 import {
   CanActivate,
@@ -12,7 +12,7 @@ import {
 import { Observable, zip } from 'rxjs';
 import { map, skipWhile, tap } from 'rxjs/operators';
 
-import { AvlAuthService } from '@avl-ng-controls/auth';
+import { AuthConfig, AUTH_CONFIG, AvlAuthService } from '@avl-ng-controls/auth';
 import { ShellCommunicationService } from '@avl-services/ng-services';
 
 /**
@@ -26,7 +26,8 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
     private authService: AvlAuthService,
     private location: Location,
     private router: Router,
-    private shellCommunicationService: ShellCommunicationService
+    private shellCommunicationService: ShellCommunicationService,
+    @Inject(AUTH_CONFIG) private authConfig: AuthConfig
   ) {}
 
   public canActivate(_: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
@@ -55,20 +56,34 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
 
   private standaloneAppLogin$(redirectUrl: string): Observable<boolean> {
     return this.authService.isLoggedIn$.pipe(
-      tap((isLoggedIn) => isLoggedIn || this.checkErrorMessage(redirectUrl))
+      tap((isLoggedIn) => this.handleRolesAndError(isLoggedIn, redirectUrl)));
+  }
+
+  private handleRolesAndError(isLoggedIn: boolean, redirectUrl: string): void {
+      if (isLoggedIn) {
+        if (!this.hasRequiredRole()) {
+          this.redirectToErrorPage('You do not have required role to visit this page');
+        }
+      } else this.checkErrorMessage(redirectUrl);
+  }
+
+  private hasRequiredRole(): boolean {
+    return (
+      !this.authConfig.requiredRole ||
+      this.authService.currentUser.roles?.includes(this.authConfig.requiredRole)
     );
   }
 
   private checkErrorMessage(redirectUrl: string): void {
     if (this.authService.errorMessage) {
-      this.redirectToErrorPage();
+      this.redirectToErrorPage(this.authService.errorMessage);
     } else {
       this.authService.login(redirectUrl);
     }
   }
 
-  private redirectToErrorPage(): void {
-    const routerState = { errorMessage: this.authService.errorMessage };
+  private redirectToErrorPage(errorMessage: string): void {
+    const routerState = { errorMessage };
     this.router.navigateByUrl('/error-page', { state: routerState }).then((_) => {
       this.authService.clearErrorMessage();
     });
@@ -79,15 +94,17 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
   private childAppLogin$(redirectUrl: string): Observable<boolean> {
     return zip(
       this.shellCommunicationService.redirectedFromLogIn.pipe(
-        map((redirectedFromLogIn) => this.handleRedirectedFromLogin(redirectedFromLogIn, redirectUrl))
+        map((redirectedFromLogIn) =>
+          this.handleRedirectedFromLogin(redirectedFromLogIn, redirectUrl)
+        )
       ),
       this.authService.user$.pipe(
         skipWhile((user) => user === undefined),
         map((user) => Boolean(user))
       )
     ).pipe(
-      map(([_, userExists]) => userExists)
-    );
+      map(([_, userExists]) => userExists),
+      tap((userExists) => this.handleRolesAndError(userExists, redirectUrl)));
   }
 
   private handleRedirectedFromLogin = (isRedirected: boolean, redirectUrl: string): boolean => {
@@ -95,5 +112,5 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
       this.shellCommunicationService.notifyShellAboutLogin(redirectUrl);
     }
     return isRedirected;
-  }
+  };
 }

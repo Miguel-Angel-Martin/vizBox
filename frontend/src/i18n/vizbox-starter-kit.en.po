@@ -36,10 +36,10 @@ msgid "VizBoxStarterKit.Help"
 msgstr "Help"
 
 msgid "VizBoxStarterKit.Login"
-msgstr "Login"
+msgstr "Log in"
 
 msgid "VizBoxStarterKit.Logout"
-msgstr "Logout"
+msgstr "Log out"
 
 msgid "VizBoxStarterKit.Monitor"
 msgstr "Monitor"
@@ -124,6 +124,3 @@ msgstr "Save"
 
 msgid "VizBoxStarterKit.PetsInStore"
 msgstr "Pets in store"
-
-msgid "VizBoxStarterKit.Employee"
-msgstr "Employee"

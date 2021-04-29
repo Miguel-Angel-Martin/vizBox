@@ -1,8 +1,18 @@
 <avl-app-layout>
-  <avl-app-bar *ngIf="!isChild" [homePageUrl]="homePageUrl" slot="toolbar" [fixed]="true"
-    [(currentApplication)]="currentApp">
-
-    <avl-overflow-menu slot="menu" [items]="menuItems" (itemClicked)="overflowMenuClicked($event)">
+  <avl-app-bar
+    *ngIf="!isChild"
+    [homePageUrl]="homePageUrl"
+    slot="toolbar"
+    [fixed]="true"
+    [(currentApplication)]="currentApp"
+  >
+    <viz-notifications></viz-notifications>
+    <avl-overflow-menu
+      id="appBarMenu"
+      slot="menu"
+      [items]="menuItems"
+      (itemClicked)="overflowMenuClicked($event)"
+    >
       <avl-icon-button icon="more-vert" slot="trigger"></avl-icon-button>
     </avl-overflow-menu>
   </avl-app-bar>
@@ -15,8 +25,12 @@
   <router-outlet (activate)="onActivate()"></router-outlet>
 </avl-app-layout>
 
-<avl-dialog *ngIf="!isChild" id="settingsDialog" [(open)]="isSettingsDialogOpen" [closeOnScrimClick]="false">
-
+<avl-dialog
+  *ngIf="!isChild"
+  id="settingsDialog"
+  [(open)]="isSettingsDialogOpen"
+  [closeOnScrimClick]="false"
+>
   <ng-template #content>
     <avl-dialog-header>Settings</avl-dialog-header>
     <avl-dialog-content>
@@ -24,23 +38,51 @@
       <avl-radio-group id="theme" [(selectedValue)]="settings.theme">
         <avl-radio-button name="light">Light</avl-radio-button>
         <avl-radio-button name="dark">Dark</avl-radio-button>
-      </avl-radio-group> <br />
+      </avl-radio-group>
+      <br />
 
-      <avl-dropdown id="countryDropdown" label="Country" [items]="countries" [(selectedValue)]="settings.country"
-        compact-mode></avl-dropdown><br />
-      <avl-dropdown id="languageDropdown" label="Language" [items]="languages" [(selectedValue)]="settings.language">
-      </avl-dropdown><br />
-      
+      <avl-dropdown
+        id="countryDropdown"
+        label="Country"
+        [items]="countries"
+        [(selectedValue)]="settings.country"
+        compact-mode
+      ></avl-dropdown
+      ><br />
+      <avl-dropdown
+        id="languageDropdown"
+        label="Language"
+        [items]="languages"
+        [(selectedValue)]="settings.language"
+      >
+      </avl-dropdown
+      ><br />
+
       <avl-list-expander [narrow]="true">
         <div role="header">
-            <label>Logging</label>
+          <label>Logging</label>
         </div>
         <div role="content">
-          <avl-dropdown id="logLevelDropdown" [items]="logLevelOptions" label="Log Level" [(selectedIndex)]="settings.globalLogLevel" compact-mode></avl-dropdown> <br />
-          <avl-textfield label="Log debounce time (s)" [(value)]="settings.debounceTime" compact-mode></avl-textfield>
-          <avl-textfield label="Log capacity" [(value)]="settings.capacity" compact-mode></avl-textfield>
+          <avl-dropdown
+            id="logLevelDropdown"
+            [items]="logLevelOptions"
+            label="Log Level"
+            [(selectedIndex)]="settings.globalLogLevel"
+            compact-mode
+          ></avl-dropdown>
+          <br />
+          <avl-textfield
+            label="Log debounce time (s)"
+            [(value)]="settings.debounceTime"
+            compact-mode
+          ></avl-textfield>
+          <avl-textfield
+            label="Log capacity"
+            [(value)]="settings.capacity"
+            compact-mode
+          ></avl-textfield>
         </div>
-    </avl-list-expander>
+      </avl-list-expander>
     </avl-dialog-content>
 
     <avl-dialog-footer>
@@ -54,7 +96,6 @@
   [(open)]="isAboutDialogOpen"
   [productLogo]="AVLDialogInfo.logoSrc"
   [productName]="AVLDialogInfo.productName"
-  [brandPromise]="AVLDialogInfo.brandPromise"
   [versionInfo]="AVLDialogInfo.versionInfo"
   [legalText]="AVLDialogInfo.legalText"
   [additionalInfoLabel]="AVLDialogInfo.additionalInfoLabel"

@@ -1,11 +1,11 @@
 # AVL - Web Application Starter Kit
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.2. For a quick development cycle we would recommend to use [NodeJS](https://nodejs.org/en/) as the preferred development environment.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0. For a quick development cycle we would recommend to use [NodeJS](https://nodejs.org/en/) as the preferred development environment.
 
 ## Installation
 
 ### Prerequisites
-1. Install latest version of [node.js](https://nodejs.org) - minimum version 5.3.0 (check with `npm -v`)
+1. Install latest version of [node.js](https://nodejs.org) - minimum version 6.13.4 (check with `npm -v`)
 
 For code scaffolding, install the [Angular CLI](https://github.com/angular/angular-cli) globally with `npm install -g @angular/cli`
 
@@ -13,9 +13,6 @@ For code scaffolding, install the [Angular CLI](https://github.com/angular/angul
 1. Run `npm install` to install all dependencies and packages used by the starter kit.
    This can take quite some time the first time (2-5 minutes). Virus Scanning of 
    thousands of artifacts slows down here significantly.
-2. Run `npm run polymer` to build polymer controls (Necessary after each installation of new controls.)
-3. Run `npm run build` to build the starter kit
-
 ### Run/Serve the Application
 1. Run `npm run start` or for short `npm start` which will start `npm run dev` to actually start a local develpment server. To use open the browser at:  `http://localhost:4200/`
 
@@ -36,15 +33,12 @@ and necessary artifacts in that folder which can be used to code a new functiona
 
 - Run `npm run test:single` to execute the unit tests only once.
 
-- Run `npm run test:single` to execute the unit tests only once.
-
 - Run `npm run coverage` to create a test coverage report for your unit tests.
 - Run `npm run coverage:show` and open `http://localhost:8080/docs` to show the created coverage report.
 
 ### Running end-to-end tests
 
 Run `npm run e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `yarn run start`.
 
 ### Linting
 
