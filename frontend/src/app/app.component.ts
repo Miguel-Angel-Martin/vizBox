@@ -78,11 +78,6 @@ export class AppComponent implements OnDestroy, OnInit {
       '/logging-demo',
       'icons:list'
     ),
-    new TopLevelPage(
-      this.translateService.instant('VizBoxStarterKit.Employee'),
-      '/employee/list',
-      'icons:link'
-    ),
   ];
 
   private destroyed$: Subject<void> = new Subject();

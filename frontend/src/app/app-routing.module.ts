@@ -21,11 +21,6 @@ const appRoutes: Routes = [
     path: 'logging-demo',
     loadChildren: () => import('app/components/logging-demo/logging-demo.module').then(m => m.LoggingDemoModule)
   },
-  {
-    path: 'employee',
-    loadChildren: () => import('./components/employee/employee.module').then(m => m.EmployeeModule)
-  },
-
   { path: 'error-page', component: ErrorPageComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
