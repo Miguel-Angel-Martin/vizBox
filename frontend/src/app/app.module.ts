@@ -26,6 +26,8 @@ import { FormsModule } from '@angular/forms';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { GraphQLModule } from './graphql.module';
 
+import { AngularMaterialModule } from './shared/components/angular-material/angular-material.module';
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new MultiTranslateHttpLoader(http, [
     { prefix: 'assets/i18n/avl-controls-core.', suffix: '.json' },
@@ -51,6 +53,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
+    AngularMaterialModule,
     SharedModule,
     CoreModule,
     AppRoutingModule,
