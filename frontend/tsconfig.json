@@ -3,17 +3,10 @@
   "compilerOptions": {
     "downlevelIteration": true,
     "outDir": "./dist/out-tsc",
-    "paths": {
-      "@app": ["src/app/*"],
-      "@environment":["src/environments/*"],
-      "@shared": ["src/app/shared/*"],
-      "@characters": ["src/app/components/characters/*"],
-    },
     "baseUrl": "src",
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es2015",
     "typeRoots": [
@@ -21,11 +14,9 @@
     ],
     "lib": [
       "es2016",
-      "dom",
-      "esnext.asynciterable"
+      "dom"
     ],
-    "module": "esnext",
-    "allowSyntheticDefaultImports": true
+    "module": "es2020"
   },
   "angularCompilerOptions": {
     "preserveWhitespaces": false,

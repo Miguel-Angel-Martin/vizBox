@@ -1,0 +1,10 @@
+{
+  "name": "@avl-demo/pet-store-service",
+  "version": "0.0.4",
+  "license": "",
+  "dependencies": {
+  },
+  "publishConfig": {
+    "registry": "https://artifactory.avl.com/artifactory/api/npm/npm-release"
+  }
+}

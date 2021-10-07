@@ -1,9 +1,9 @@
-import { async } from '@angular/core/testing';
+import { waitForAsync } from '@angular/core/testing';
 const packages = require('../../../scripts/licenses-validation.json');
 
 describe('Licenses', () => {
 
-  it('should validate licenses', async(() => {
+  it('should validate licenses', waitForAsync(() => {
 
     const p = JSON.parse(JSON.stringify(packages));
     p.forEach(el => {

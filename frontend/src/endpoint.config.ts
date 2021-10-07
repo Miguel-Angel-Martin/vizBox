@@ -1,4 +1,4 @@
-import { AuthConfig } from '@avl-ng-controls/auth';
+import { AuthConfig } from '@avl-services/ng-services';
 import { environment } from './environments/environment';
 
 // if you want to use local petstore-server use http://localhost:65435

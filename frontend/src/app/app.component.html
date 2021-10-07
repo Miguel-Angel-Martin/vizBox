@@ -17,10 +17,10 @@
     </avl-overflow-menu>
   </avl-app-bar>
 
-  <avl-side-nav slot="left-side" [menuItems]="sideNavItems"></avl-side-nav>
+  <avl-side-nav slot="left-side" [menuItems]="sideNavItems" [shellUrl]="shellUrl"></avl-side-nav>
   <div *ngIf="showLoader" class="loadingProgressContainer">
     <div class="loader"></div>
-    <div>Loading, please wait...</div>
+    <div>{{ 'VizBoxStarterKit.Loading...' | translate }}</div>
   </div>
   <router-outlet (activate)="onActivate()"></router-outlet>
 </avl-app-layout>
@@ -32,52 +32,63 @@
   [closeOnScrimClick]="false"
 >
   <ng-template #content>
-    <avl-dialog-header>Settings</avl-dialog-header>
+    <avl-dialog-header>{{ 'VizBoxStarterKit.Settings' | translate }}</avl-dialog-header>
     <avl-dialog-content>
-      <p>Theme</p>
+      <p>{{ 'VizBoxStarterKit.Theme' | translate }}</p>
       <avl-radio-group id="theme" [(selectedValue)]="settings.theme">
-        <avl-radio-button name="light">Light</avl-radio-button>
-        <avl-radio-button name="dark">Dark</avl-radio-button>
+        <avl-radio-button name="light">{{ 'VizBoxStarterKit.Light' | translate }}</avl-radio-button>
+        <avl-radio-button name="dark">{{ 'VizBoxStarterKit.Dark' | translate }}</avl-radio-button>
       </avl-radio-group>
       <br />
 
       <avl-dropdown
-        id="countryDropdown"
-        label="Country"
-        [items]="countries"
-        [(selectedValue)]="settings.country"
-        compact-mode
-      ></avl-dropdown
-      ><br />
-      <avl-dropdown
         id="languageDropdown"
-        label="Language"
+        [label]="labelLanguage"
         [items]="languages"
         [(selectedValue)]="settings.language"
-      >
-      </avl-dropdown
-      ><br />
+      ></avl-dropdown>
+      <avl-dropdown
+        id="countryDropdown"
+        [label]="labelCountry"
+        [items]="countries"
+        [selectedValue]="settings.country"
+        (selected-value-changed)="onCountryChanged($event)"
+      ></avl-dropdown>
+      <div *ngIf="settings.country">
+        <avl-dropdown
+          id="dateTimeFormatDropdown"
+          [label]="labelDateTimeFormat"
+          [items]="dateTimeFormats"
+          [(selectedValue)]="settings.dateTimeFormat"
+        ></avl-dropdown>
+        <avl-dropdown
+          id="decimalSeparatorDropdown"
+          [label]="labelDecimalSeparator"
+          [items]="decimalSeparators"
+          [(selectedValue)]="settings.decimalSeparator"
+        ></avl-dropdown>
+      </div>
 
       <avl-list-expander [narrow]="true">
         <div role="header">
-          <label>Logging</label>
+          <label>{{ 'VizBoxStarterKit.Logging' | translate }}</label>
         </div>
         <div role="content">
           <avl-dropdown
             id="logLevelDropdown"
             [items]="logLevelOptions"
-            label="Log Level"
+            [label]="labelLogLevel"
             [(selectedIndex)]="settings.globalLogLevel"
             compact-mode
           ></avl-dropdown>
           <br />
           <avl-textfield
-            label="Log debounce time (s)"
+            [label]="labelLogDebounceTime"
             [(value)]="settings.debounceTime"
             compact-mode
           ></avl-textfield>
           <avl-textfield
-            label="Log capacity"
+            [label]="labelLogCapacity"
             [(value)]="settings.capacity"
             compact-mode
           ></avl-textfield>
@@ -86,20 +97,17 @@
     </avl-dialog-content>
 
     <avl-dialog-footer>
-      <avl-button (click)="closeDialog('Save')">Save</avl-button>
-      <avl-button (click)="closeDialog('Cancel')">Cancel</avl-button>
+      <avl-button (click)="closeDialog('Save')">{{
+        'VizBoxStarterKit.Save' | translate
+      }}</avl-button>
+      <avl-button (click)="closeDialog('Cancel')">{{
+        'VizBoxStarterKit.Cancel' | translate
+      }}</avl-button>
     </avl-dialog-footer>
   </ng-template>
 </avl-dialog>
 
-<avl-about-dialog
-  [(open)]="isAboutDialogOpen"
-  [productLogo]="AVLDialogInfo.logoSrc"
-  [productName]="AVLDialogInfo.productName"
-  [versionInfo]="AVLDialogInfo.versionInfo"
-  [legalText]="AVLDialogInfo.legalText"
-  [additionalInfoLabel]="AVLDialogInfo.additionalInfoLabel"
-  [additionalInfoUrl]="AVLDialogInfo.additionalInfoUrl"
-  [copyright]="AVLDialogInfo.copyright"
->
+<avl-about-dialog [(open)]="isAboutDialogOpen" [avlAboutDialogInfo]="avlAboutDialogInfo">
 </avl-about-dialog>
+
+<avl-unsaved-changes-dialog [unsavedChangesService]="unsavedChangesService"></avl-unsaved-changes-dialog>

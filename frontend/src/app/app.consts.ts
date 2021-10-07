@@ -2,6 +2,7 @@ import {
   AvlOverflowMenuGroup,
   AvlOverflowMenuItem,
 } from '@avl-controls/core/dist/avl-overflow-menu/avl-overflow-menu.api';
+import { AvlAboutDialogInfo } from '@avl-ng-controls/dialog';
 
 export const USER_MENU_ITEM: AvlOverflowMenuItem = {
   label: '',
@@ -57,38 +58,110 @@ export const MENU: AvlOverflowMenuGroup[] = [
     items: CONSTANT_MENU_ITEMS,
   },
   {
-    items: [LOGIN_MENU_ITEM]
+    items: [LOGIN_MENU_ITEM],
+  },
+];
+
+export enum DateTimeFormats {
+  German = 'DD.MM.YYYY hh:mm:ss',
+  American = 'MM/DD/YYYY hh:mm:ss P',
+  British = 'DD/MM/YYYY hh:mm:ss'
+}
+
+export enum DecimalSeparators {
+  German = 'comma (,) e.g. 1000,123',
+  American = 'dot (.) e.g. 1000.123',
+}
+
+export enum Countries {
+  German = 'de-DE',
+  American = 'en-US',
+  British = 'en-GB',
+  Netherlands = 'nl-NL',
+  Austrian = 'de-AT'
+}
+
+export const COUNTRIES: Array<{ value: AvlLocalizationService.Locale, label: string }>  = [
+  {
+    label: 'VizBoxStarterKit.UnitedKingdom',
+    value: Countries.British,
+  },
+  {
+    label: 'VizBoxStarterKit.UnitedStates',
+    value: Countries.American,
+  },
+  {
+    label: 'VizBoxStarterKit.Germany',
+    value: Countries.German,
+  },
+];
+
+export const LANGUAGES = [
+  {
+    value: 'en',
+    label: 'VizBoxStarterKit.English',
+  },
+  {
+    value: 'hr',
+    label: 'VizBoxStarterKit.Croatian',
+  },
+];
+
+export const DATE_TIME_MAPPINGS: { [key in AvlLocalizationService.Locale]: string } = {
+    [Countries.German]: DateTimeFormats.German,
+    [Countries.American]: DateTimeFormats.American,
+    [Countries.British]: DateTimeFormats.British,
+    [Countries.Netherlands]: DateTimeFormats.British,
+    [Countries.Austrian]: DateTimeFormats.German,
+}
+
+export const DECIMAL_SEPARATOR_MAPPINGS: { [key in AvlLocalizationService.Locale]: string } = {
+  [Countries.German]: DecimalSeparators.German,
+  [Countries.American]: DecimalSeparators.American,
+  [Countries.British]: DecimalSeparators.American,
+  [Countries.Netherlands]: DecimalSeparators.American,
+  [Countries.Austrian]: DecimalSeparators.German,
+}
+
+export const DATE_TIME_FORMATS: Array<{ value: AvlLocalizationService.Locale, label: string }> = [
+  {
+    value: Countries.British,
+    label: DateTimeFormats.British,
+  },
+  {
+    value: Countries.American,
+    label: DateTimeFormats.American,
+  },
+  {
+    value: Countries.German,
+    label: DateTimeFormats.German,
   }
 ];
 
-export const COUNTRIES = [
+export const DECIMAL_SEPARATORS: Array<{ value: AvlLocalizationService.Locale, label: string }> = [
   {
-    label: 'Croatia',
-    value: 'hr',
+    value: Countries.British,
+    label: DecimalSeparators.American,
   },
   {
-    label: 'United Kingdom',
-    value: 'uk',
-  },
-  {
-    label: 'United States',
-    value: 'us',
+    value: Countries.German,
+    label: DecimalSeparators.German,
   },
 ];
 
-export const AVL_DIALOG_INFO = {
-  logoSrc: 'assets/images/vizbox-logo.svg',
-  productName: 'Starter kit vizbox application™',
+export const AVL_DIALOG_INFO: AvlAboutDialogInfo = {
+  productLogo: 'assets/images/vizbox-logo.svg',
+  productName: 'VizBoxStarterKit.ProductName',
+  brandPromise: 'VizBoxStarterKit.BrandPromise',
   versionInfo: [
-    { label: 'Version number', value: '1.0.0' },
-    { label: 'Build number', value: '1345' },
-    { label: 'Build date', value: '2021-01-11' },
+    { label: 'VizBoxStarterKit.VersionNumber', value: '1.0.0' },
+    { label: 'VizBoxStarterKit.BuildNumber', value: '1345' },
+    { label: 'VizBoxStarterKit.BuildDate', value: '2021-01-11' },
   ],
-  legalText:
-    'This program incorporates parts from other organizations which are distributed under software licences of their choosing.',
-  additionalInfoLabel: 'Additional version and copyright information.',
+  legalText: 'VizBoxStarterKit.LegalText',
+  additionalInfoLabel: 'VizBoxStarterKit.AdditionalInfoLabel',
   additionalInfoUrl: 'assets/licenses/licenses-summary.txt',
-  copyright: '© AVL List GmbH 2021. All rights reserved.',
+  okButtonLabel: 'VizBoxStarterKit.OkButtonLabel',
 };
 
 export const THEMES = ['dark', 'light'];

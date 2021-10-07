@@ -6,8 +6,8 @@ import { protractor } from 'protractor/built/ptor';
 import { waitElementPresent, waitElementVisible } from './test-util';
 
 describe('Pets', () => {
-  let page = new IntroPage;
-  let keycloakLoginPage = new KeycloakLoginPage;
+  const page = new IntroPage;
+  const keycloakLoginPage = new KeycloakLoginPage;
 
   async function addNewPetWithPhoto(name: string) {
     const filePath: string = path.resolve(__dirname, './files/turtle1.jpg');
@@ -42,7 +42,7 @@ describe('Pets', () => {
     const petDetailPhotoSrc = await page.petDetailPhotoFirst.getAttribute('src');
 
     expect(petDetailPhotoSrc).toBeDefined();
-    expect(petDetailPhotoSrc).toContain('blob:')
+    expect(petDetailPhotoSrc).toContain('blob:');
     expect(petDetailHeadingText).toEqual(petName);
   });
 });

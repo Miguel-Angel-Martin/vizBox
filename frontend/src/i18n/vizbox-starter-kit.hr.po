@@ -21,8 +21,20 @@ msgstr "Avl Web Starter Kit"
 msgid "VizBoxStarterKit.About"
 msgstr "O nama"
 
+msgid "VizBoxStarterKit.Demos"
+msgstr "Demo"
+
+msgid "VizBoxStarterKit.LocalizationDemo"
+msgstr "Demo lokalizacije"
+
 msgid "VizBoxStarterKit.LoggingDemo"
 msgstr "Demo Logiranja"
+
+msgid "VizBoxStarterKit.Date"
+msgstr "Datum"
+
+msgid "VizBoxStarterKit.NumberFormat"
+msgstr "Format broja"
 
 msgid "VizBoxStarterKit.Unknown"
 msgstr "Nepoznato"
@@ -31,7 +43,7 @@ msgid "VizBoxStarterKit.Messages"
 msgstr "Poruke"
 
 msgid "VizBoxStarterKit.Settings"
-msgstr "Postavke"
+msgstr "Postavke korisnika"
 
 msgid "VizBoxStarterKit.Help"
 msgstr "Pomoć"
@@ -123,3 +135,80 @@ msgstr "Spremi"
 
 msgid "VizBoxStarterKit.PetsInStore"
 msgstr "Ljubimci u dućanu"
+
+# Settings
+msgid "VizBoxStarterKit.Theme"
+msgstr "Tema"
+
+msgid "VizBoxStarterKit.Light"
+msgstr "Svjetla"
+
+msgid "VizBoxStarterKit.Dark"
+msgstr "Tamna"
+
+msgid "VizBoxStarterKit.Logging"
+msgstr "Zapisnik"
+
+msgid "VizBoxStarterKit.Country"
+msgstr "Država"
+
+msgid "VizBoxStarterKit.DateTimeFormat"
+msgstr "Format datuma i vremena"
+
+msgid "VizBoxStarterKit.DecimalSeparator"
+msgstr "Decimalni separator"
+
+msgid "VizBoxStarterKit.Croatia"
+msgstr "Hrvatska"
+
+msgid "VizBoxStarterKit.UnitedKingdom"
+msgstr "Ujedinjeno Kraljevstvo"
+
+msgid "VizBoxStarterKit.UnitedStates"
+msgstr "Sjedinjene Američke Države"
+
+msgid "VizBoxStarterKit.Germany"
+msgstr "Njemačka"
+
+msgid "VizBoxStarterKit.Language"
+msgstr "Jezik"
+
+msgid "VizBoxStarterKit.English"
+msgstr "Engleski"
+
+msgid "VizBoxStarterKit.Croatian"
+msgstr "Hrvatski"
+
+msgid "VizBoxStarterKit.LogLevel"
+msgstr "Razina zapisa"
+
+msgid "VizBoxStarterKit.LogDebounceTime"
+msgstr "Period slanja zapisa (s)"
+
+msgid "VizBoxStarterKit.LogCapacity"
+msgstr "Kapacitet zapisa"
+
+# About Dialog
+msgid "VizBoxStarterKit.ProductName"
+msgstr "Starter kit vizbox aplikacija™"
+
+msgid "VizBoxStarterKit.BrandPromise"
+msgstr "SUB-HEADING"
+
+msgid "VizBoxStarterKit.VersionNumber"
+msgstr "Broj verzije"
+
+msgid "VizBoxStarterKit.BuildNumber"
+msgstr "Broj izgradnje"
+
+msgid "VizBoxStarterKit.BuildDate"
+msgstr "Datum izgradnje"
+
+msgid "VizBoxStarterKit.LegalText"
+msgstr "Ovaj program uključuje dijelove iz drugih organizacija koji su distribuirani pod softverskim licencama po njihovom izboru."
+
+msgid "VizBoxStarterKit.AdditionalInfoLabel"
+msgstr "Dodatne informacije o verziji i zaštiti prava."
+
+msgid "VizBoxStarterKit.OkButtonLabel"
+msgstr "U redu"

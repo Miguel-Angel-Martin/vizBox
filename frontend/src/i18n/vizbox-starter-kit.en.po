@@ -20,8 +20,20 @@ msgstr "Avl Web Starter Kit"
 msgid "VizBoxStarterKit.About"
 msgstr "About"
 
+msgid "VizBoxStarterKit.Demos"
+msgstr "Demos"
+
+msgid "VizBoxStarterKit.LocalizationDemo"
+msgstr "Localization Demo"
+
 msgid "VizBoxStarterKit.LoggingDemo"
 msgstr "Logging Demo"
+
+msgid "VizBoxStarterKit.Date"
+msgstr "Date"
+
+msgid "VizBoxStarterKit.NumberFormat"
+msgstr "Number format"
 
 msgid "VizBoxStarterKit.Unknown"
 msgstr "Unknown"
@@ -30,7 +42,7 @@ msgid "VizBoxStarterKit.Messages"
 msgstr "Messages"
 
 msgid "VizBoxStarterKit.Settings"
-msgstr "Settings"
+msgstr "User settings"
 
 msgid "VizBoxStarterKit.Help"
 msgstr "Help"
@@ -124,3 +136,80 @@ msgstr "Save"
 
 msgid "VizBoxStarterKit.PetsInStore"
 msgstr "Pets in store"
+
+# Settings
+msgid "VizBoxStarterKit.Theme"
+msgstr "Theme"
+
+msgid "VizBoxStarterKit.Light"
+msgstr "Light"
+
+msgid "VizBoxStarterKit.Dark"
+msgstr "Dark"
+
+msgid "VizBoxStarterKit.Logging"
+msgstr "Logging"
+
+msgid "VizBoxStarterKit.Country"
+msgstr "Country"
+
+msgid "VizBoxStarterKit.DateTimeFormat"
+msgstr "Datetime format"
+
+msgid "VizBoxStarterKit.DecimalSeparator"
+msgstr "Decimal separator"
+
+msgid "VizBoxStarterKit.Croatia"
+msgstr "Croatia"
+
+msgid "VizBoxStarterKit.UnitedKingdom"
+msgstr "United Kingdom"
+
+msgid "VizBoxStarterKit.UnitedStates"
+msgstr "United States"
+
+msgid "VizBoxStarterKit.Germany"
+msgstr "Germany"
+
+msgid "VizBoxStarterKit.Language"
+msgstr "Language"
+
+msgid "VizBoxStarterKit.English"
+msgstr "English"
+
+msgid "VizBoxStarterKit.Croatian"
+msgstr "Croatian"
+
+msgid "VizBoxStarterKit.LogLevel"
+msgstr "Log level"
+
+msgid "VizBoxStarterKit.LogDebounceTime"
+msgstr "Log debounce time (s)"
+
+msgid "VizBoxStarterKit.LogCapacity"
+msgstr "Log capacity"
+
+# About Dialog
+msgid "VizBoxStarterKit.ProductName"
+msgstr "Starter kit vizbox application™"
+
+msgid "VizBoxStarterKit.BrandPromise"
+msgstr "SUB-HEADING"
+
+msgid "VizBoxStarterKit.VersionNumber"
+msgstr "Version number"
+
+msgid "VizBoxStarterKit.BuildNumber"
+msgstr "Build number"
+
+msgid "VizBoxStarterKit.BuildDate"
+msgstr "Build date"
+
+msgid "VizBoxStarterKit.LegalText"
+msgstr "This program incorporates parts from other organizations which are distributed under software licences of their choosing."
+
+msgid "VizBoxStarterKit.AdditionalInfoLabel"
+msgstr "Additional version and copyright information."
+
+msgid "VizBoxStarterKit.OkButtonLabel"
+msgstr "OK"

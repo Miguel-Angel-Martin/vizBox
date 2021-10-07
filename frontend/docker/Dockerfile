@@ -1,5 +1,4 @@
-FROM docker.avl.com/nginx:1.17-alpine
-LABEL author="Andreas Juffinger<andreas.juffinger@avl.com>"
+FROM docker.avl.com/nginx:1.21-alpine
 
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 COPY ./dist/ /www/vizbox
@@ -11,7 +10,7 @@ CMD ["/bin/sh",  "-c",  "envsubst < /www/vizbox/assets/env.template.js > /www/vi
 
 ENV API_URL="https://vizbox.avl.com/api"
 
-EXPOSE 8082 8084
+EXPOSE 8082
 
 # to test, copy files from vizbox-client/dist to vizbox-client/docker/dist then build docker image
 # docker build -t starterkit .

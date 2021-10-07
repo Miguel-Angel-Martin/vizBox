@@ -1,15 +1,15 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { SharedModule } from '../../shared/shared.module';
 import { AboutComponent } from './about.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { AvlAuthService } from '@avl-ng-controls/auth';
+import { AvlAuthService } from '@avl-services/ng-services';
 
 describe('AboutComponent', () => {
   beforeEach(
-    async(() => {
+    waitForAsync(() => {
       TestBed.configureTestingModule({
         declarations: [AboutComponent],
         imports: [RouterTestingModule.withRoutes([]), SharedModule, TranslateModule.forRoot()],
@@ -22,7 +22,7 @@ describe('AboutComponent', () => {
 
   it(
     'should create the AboutComponent',
-    async(() => {
+    waitForAsync(() => {
       const fixture = TestBed.createComponent(AboutComponent);
       const app = fixture.debugElement.componentInstance;
       expect(app).toBeTruthy();

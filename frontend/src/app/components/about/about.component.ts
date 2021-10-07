@@ -4,7 +4,7 @@ import { ShellCommunicationService } from '@avl-services/ng-services';
 @Component({
   selector: 'viz-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css']
+  styleUrls: ['./about.component.css'],
 })
 export class AboutComponent {
 

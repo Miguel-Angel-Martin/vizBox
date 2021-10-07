@@ -8,7 +8,7 @@ import {
 import {
   AvlDatatable
 } from '@avl-controls/datatable/dist/avl-datatable/avl-datatable.api';
-import { DataProvider, DataProviderResponse, TableDataRequestParams } from '@avl-controls/interfaces';
+import { DataProvider, DataProviderResponse, TableDataRequestParams } from '@avl-interfaces/interfaces';
 
 import { PetApiService, Pet, InlineResponse200 } from 'pet-store';
 import { SortOrder } from './sort-order';

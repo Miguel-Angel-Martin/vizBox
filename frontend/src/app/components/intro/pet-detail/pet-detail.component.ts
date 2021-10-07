@@ -2,8 +2,7 @@ import { Component, Input, OnChanges, SimpleChanges, Inject } from '@angular/cor
 
 import { Pet } from 'pet-store';
 import { PetPhoto } from './pet-photo';
-import { UPLOAD_SERVICE } from '@avl-controls/ng-binders';
-import { AvlUploadService } from '@avl-controls/interfaces';
+import { UploadService, UPLOAD_SERVICE } from '@avl-services/ng-services';
 import { DomSanitizer } from '@angular/platform-browser';
 
 import '@avl-controls/core/dist/avl-card/avl-card';
@@ -18,7 +17,7 @@ export class PetDetailComponent implements OnChanges {
 
   petPhotos: PetPhoto[];
 
-  constructor(@Inject(UPLOAD_SERVICE) private uploadService: AvlUploadService, private sanitizer: DomSanitizer) {}
+  constructor(@Inject(UPLOAD_SERVICE) private uploadService: UploadService, private sanitizer: DomSanitizer) {}
 
   ngOnChanges(changes: SimpleChanges) {
     const pet = changes.pet;
@@ -33,7 +32,7 @@ export class PetDetailComponent implements OnChanges {
       const img = new Image();
       img.src = nonCachedPhotoUrl;
 
-      let petImage = new PetPhoto(nonCachedPhotoUrl);
+      const petImage = new PetPhoto(nonCachedPhotoUrl);
       img.onload = () => {
         petImage.visible = true;
         URL.revokeObjectURL(petImage.url);
@@ -41,9 +40,9 @@ export class PetDetailComponent implements OnChanges {
       img.onerror = () => {
         this.uploadService.downloadFile(url, null,
           (data: Blob) => {
-            const url = URL.createObjectURL(data);
-            img.src = url;
-            petImage.url = <string>this.sanitizer.bypassSecurityTrustUrl(url);
+            const objectUrl = URL.createObjectURL(data);
+            img.src = objectUrl;
+            petImage.url = <string>this.sanitizer.bypassSecurityTrustUrl(objectUrl);
         });
       };
       return petImage;

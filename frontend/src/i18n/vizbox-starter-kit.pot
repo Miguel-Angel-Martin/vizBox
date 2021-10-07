@@ -13,7 +13,19 @@ msgstr ""
 msgid "VizBoxStarterKit.About"
 msgstr ""
 
+msgid "VizBoxStarterKit.Demos"
+msgstr ""
+
+msgid "VizBoxStarterKit.LocalizationDemo"
+msgstr ""
+
 msgid "VizBoxStarterKit.LoggingDemo"
+msgstr ""
+
+msgid "VizBoxStarterKit.Date"
+msgstr ""
+
+msgid "VizBoxStarterKit.NumberFormat"
 msgstr ""
 
 msgid "VizBoxStarterKit.Unknown"
@@ -110,4 +122,81 @@ msgid "VizBoxStarterKit.Save"
 msgstr ""
 
 msgid "VizBoxStarterKit.PetsInStore"
+msgstr ""
+
+# Settings
+msgid "VizBoxStarterKit.Theme"
+msgstr ""
+
+msgid "VizBoxStarterKit.Light"
+msgstr ""
+
+msgid "VizBoxStarterKit.Dark"
+msgstr ""
+
+msgid "VizBoxStarterKit.Logging"
+msgstr ""
+
+msgid "VizBoxStarterKit.Country"
+msgstr ""
+
+msgid "VizBoxStarterKit.DateTimeFormat"
+msgstr ""
+
+msgid "VizBoxStarterKit.DecimalSeparator"
+msgstr ""
+
+msgid "VizBoxStarterKit.Croatia"
+msgstr ""
+
+msgid "VizBoxStarterKit.UnitedKingdom"
+msgstr ""
+
+msgid "VizBoxStarterKit.UnitedStates"
+msgstr ""
+
+msgid "VizBoxStarterKit.Germany"
+msgstr ""
+
+msgid "VizBoxStarterKit.Language"
+msgstr ""
+
+msgid "VizBoxStarterKit.English"
+msgstr ""
+
+msgid "VizBoxStarterKit.Croatian"
+msgstr ""
+
+msgid "VizBoxStarterKit.LogLevel"
+msgstr ""
+
+msgid "VizBoxStarterKit.LogDebounceTime"
+msgstr ""
+
+msgid "VizBoxStarterKit.LogCapacity"
+msgstr ""
+
+# About Dialog
+msgid "VizBoxStarterKit.ProductName"
+msgstr ""
+
+msgid "VizBoxStarterKit.BrandPromise"
+msgstr ""
+
+msgid "VizBoxStarterKit.VersionNumber"
+msgstr ""
+
+msgid "VizBoxStarterKit.BuildNumber"
+msgstr ""
+
+msgid "VizBoxStarterKit.BuildDate"
+msgstr ""
+
+msgid "VizBoxStarterKit.LegalText"
+msgstr ""
+
+msgid "VizBoxStarterKit.AdditionalInfoLabel"
+msgstr ""
+
+msgid "VizBoxStarterKit.OkButtonLabel"
 msgstr ""

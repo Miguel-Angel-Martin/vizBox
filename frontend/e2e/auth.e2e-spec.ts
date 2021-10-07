@@ -47,7 +47,7 @@ describe('Auth flow', () => {
     const appPage = new MyAppPage();
     await appPage.navigateTo();
 
-    const pageUrl = await browser.getCurrentUrl()
+    const pageUrl = await browser.getCurrentUrl();
 
     await appPage.clickAuthMenuItem();
     await appPage.waitForAngular(false);
@@ -57,7 +57,7 @@ describe('Auth flow', () => {
 
     await appPage.waitForAngular(true);
     await browser.sleep(1000);
-    
+
     await page.clickAuthMenuItem();
 
     await appPage.waitForAngular(false);
@@ -76,7 +76,7 @@ describe('Auth flow', () => {
     await appPage.clickAuthMenuItem();
     await appPage.waitForAngular(false);
 
-    
+
     await keycloakLoginPage.fillLoginForm();
     await keycloakLoginPage.submitLoginForm();
 

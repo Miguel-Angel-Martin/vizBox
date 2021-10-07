@@ -9,11 +9,10 @@ import {
   Route,
   Router,
 } from '@angular/router';
-import { Observable, zip } from 'rxjs';
-import { map, skipWhile, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 
-import { AuthConfig, AUTH_CONFIG, AvlAuthService } from '@avl-ng-controls/auth';
-import { ShellCommunicationService } from '@avl-services/ng-services';
+import { AuthConfig, AUTH_CONFIG, AvlAuthService, ShellCommunicationService } from '@avl-services/ng-services';
 
 /**
  * Guard for the routes on which you have to be logged in to view.
@@ -64,7 +63,9 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
         if (!this.hasRequiredRole()) {
           this.redirectToErrorPage('You do not have required role to visit this page');
         }
-      } else this.checkErrorMessage(redirectUrl);
+      } else {
+        this.checkErrorMessage(redirectUrl);
+      }
   }
 
   private hasRequiredRole(): boolean {
@@ -78,7 +79,11 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
     if (this.authService.errorMessage) {
       this.redirectToErrorPage(this.authService.errorMessage);
     } else {
-      this.authService.login(redirectUrl);
+      if (!this.shellCommunicationService.isChild) {
+        this.authService.login(redirectUrl);
+      } else if (!this.authService.errorMessage) {
+        this.shellCommunicationService.notifyShellAboutLogin(redirectUrl);
+      }
     }
   }
 
@@ -89,22 +94,17 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
     });
   }
 
-  // Subscription on redirectedFromLogin, if it wasn't redirected, notifies shell about login.
-  // If it was redirected waits for the user object. Resolves to true if both subscriptions resolves to true.
+  // Subscription on isLoggedIn. Resolves to true if user is logged in.
   private childAppLogin$(redirectUrl: string): Observable<boolean> {
-    return zip(
-      this.shellCommunicationService.redirectedFromLogIn.pipe(
-        map((redirectedFromLogIn) =>
-          this.handleRedirectedFromLogin(redirectedFromLogIn, redirectUrl)
-        )
-      ),
-      this.authService.user$.pipe(
-        skipWhile((user) => user === undefined),
-        map((user) => Boolean(user))
-      )
-    ).pipe(
-      map(([_, userExists]) => userExists),
-      tap((userExists) => this.handleRolesAndError(userExists, redirectUrl)));
+    return this.authService.isLoggedIn$.pipe(
+      map((value: boolean) => {
+        if (!value) {
+          this.shellCommunicationService.notifyShellAboutLogin(redirectUrl);
+        } else {
+          this.handleRolesAndError(value, redirectUrl)
+        }
+        return value;
+      }));
   }
 
   private handleRedirectedFromLogin = (isRedirected: boolean, redirectUrl: string): boolean => {

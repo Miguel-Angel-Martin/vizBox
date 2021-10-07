@@ -21,8 +21,7 @@ export abstract class BasePage {
           if (using) {
             if (selector === '') {
               matches.push(using);
-            }
-            else {
+            } else {
               Array.prototype.push.apply(matches, using.querySelectorAll(selector));
             }
           }
@@ -54,7 +53,7 @@ export abstract class BasePage {
   }
 
   async waitForAngular(doWait: boolean): Promise<any> {
-    if(!doWait) {
+    if (!doWait) {
       await browser.waitForAngularEnabled(doWait);
     } else {
       await browser.waitForAngular();

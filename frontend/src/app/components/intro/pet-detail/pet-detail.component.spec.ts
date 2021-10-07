@@ -4,12 +4,14 @@ import { TestBed } from '@angular/core/testing';
 import { SharedModule } from '../../../shared/shared.module';
 import { PetDetailComponent } from './pet-detail.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UploadService, UPLOAD_SERVICE } from '@avl-services/ng-services';
 
 describe('PetDetailComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [PetDetailComponent],
       imports: [SharedModule, HttpClientModule],
+      providers: [ { provide: UPLOAD_SERVICE, useClass: UploadService }],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     });
   });

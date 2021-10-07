@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 import { AvlOverflowMenuGroup, AvlOverflowMenuItem } from '@avl-controls/core/dist/avl-overflow-menu/avl-overflow-menu.api';
-import { User } from '@avl-ng-controls/auth';
+import { User } from '@avl-services/ng-services';
 
 import { CONSTANT_MENU_ITEMS, LOGIN_MENU_ITEM, LOGOUT_MENU_ITEM, UNKNOWN_USER_MENU_ITEM } from '../../app.consts';
 

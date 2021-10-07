@@ -29,8 +29,12 @@
 <avl-notification-dialog
   *ngIf="isNotificationDialogOpen"
   [(open)]="isNotificationDialogOpen"
-  [notifications]="notificationService.notifications"
+  [refreshBadge]="newNotifications | async"
+  [notifications]="dialogData | filterNotifications: filters"
+  [notificationsCount]="notificationService.notificationsCount"
   (markSelectedAsRead)="markSelectedAsRead($event)"
   (markSelectedAsUnread)="markSelectedAsUnread($event)"
+  (filtersChange)="onFiltersChange($event)"
+  (tableRefresh)="refreshData()"
 >
 </avl-notification-dialog>

@@ -77,8 +77,15 @@ export class AppService implements OnDestroy {
   }
 
   private subscribeToLocaleChanges(): void {
-    this.shellCommunicationService.locale$.pipe(takeUntil(this.destroyed$)).subscribe((country) => {
-      this.settingsService.updateCountry(country);
+    this.shellCommunicationService.locale$.pipe(takeUntil(this.destroyed$)).subscribe((locale) => {
+      this.settingsService.updateCountry(locale.country as AvlLocalizationService.Locale);
+      this.settingsService.updateDateTimeFormat(
+        locale.dateTimeFormat as AvlLocalizationService.Locale
+      );
+      this.settingsService.updateDecimalSeparator(
+        locale.decimalSeparator as AvlLocalizationService.Locale
+      );
+      this.settingsService.locale$.next();
     });
   }
 }

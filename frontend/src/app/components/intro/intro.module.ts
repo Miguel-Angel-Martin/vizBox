@@ -7,7 +7,7 @@ import { IntroRoutingModule } from './intro-routing.module';
 import { PetsComponent } from './pets/pets.component';
 import { PetDialogComponent } from './pet-dialog/pet-dialog.component';
 import { PetDetailComponent } from './pet-detail/pet-detail.component';
-import { UPLOAD_SERVICE, UploadService } from '@avl-controls/ng-binders';
+import { UPLOAD_SERVICE, UploadService } from '@avl-services/ng-services';
 
 @NgModule({
   imports: [SharedModule, FormsModule, IntroRoutingModule],

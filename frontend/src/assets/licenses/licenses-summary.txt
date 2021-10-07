@@ -1,27 +1,25 @@
 Licenses Summary
 
-MIT : 1044
-UNKNOWN : 9
+MIT : 985
+UNKNOWN : 11
 Custom: https://github.com/angular/angular-cli : 5
 Custom: https://nodejs.org : 2
-ISC : 129
+ISC : 121
+CC0-1.0 : 23
 Apache-2.0 : 39
-BSD-3-Clause : 59
+BSD-3-Clause : 82
 BSD-2-Clause : 24
-(MIT OR Apache-2.0) : 2
+(MIT OR Apache-2.0) : 1
 UNLICENSED : 1
-MIT* : 11
 CC-BY-4.0 : 1
-Unlicense : 3
-BSD* : 1
+Unlicense : 5
+MIT* : 3
 AFLv2.1,BSD : 1
 (MIT OR GPL-3.0) : 1
-CC0-1.0 : 3
 (BSD-3-Clause OR GPL-2.0) : 1
 (MIT AND Zlib) : 1
 (WTFPL OR MIT) : 1
-(MIT AND BSD-3-Clause) : 1
 CC-BY-3.0 : 2
 (MIT AND CC-BY-3.0) : 3
-0BSD : 1
+0BSD : 2
 (MIT OR CC0-1.0) : 2

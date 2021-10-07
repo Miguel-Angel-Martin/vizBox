@@ -1,6 +1,6 @@
 import { Component, Input, EventEmitter, Output, Inject } from '@angular/core';
 import { Pet, BASE_PATH } from 'pet-store';
-import { AvlFile } from '@avl-controls/interfaces';
+import { AvlFile } from '@avl-interfaces/interfaces';
 import { AvlUploadMenuItemClickedEventDetail } from '@avl-controls/core/dist/avl-upload/avl-upload.api';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -38,7 +38,7 @@ export class PetDialogComponent {
   dialogOpen(open) {
     if (open) {
       this.dialogPet = this.edit ? Object.assign({}, this.pet) : this.getNewPet();
-      if(this.edit) {
+      if (this.edit) {
         this.uploadedFiles = this.dialogPet.photoUrls.map( (url, index) => {
           const name = url.split('_', 2)[1] || `file_${index}.jpg`;
           return {
@@ -105,7 +105,7 @@ export class PetDialogComponent {
     // -> create an enum otherwise.
     return Object.keys(Pet.StatusEnum).map(key => {
       const enumLabel = Pet.StatusEnum[key];
-      let label;
+      let label: string;
       switch (enumLabel) {
         case 'available':
           label = this.translateService.instant('VizBoxStarterKit.Available');
